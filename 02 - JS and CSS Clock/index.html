@@ -65,7 +65,6 @@
       transform: rotate(90deg);
       transform-origin: 100%;
       transition: all 0.05s;
-
     }
 
   </style>
@@ -76,8 +75,10 @@
     const minHand = document.querySelector('.min-hand');
     const secHand = document.querySelector('.second-hand');
 
+    /* Calculates the number of degrees that we need to rotate each clock hand by */
     const calcDegrees = (time, max) => ((time / max) * 360) + 90;
 
+    /* Runs every second to update each clock hand */
     setInterval( () => {  
       let date = new Date(); 
 
@@ -88,16 +89,8 @@
       hourHand.style.transform = `rotate(${hourRotation}deg)`;
       minHand.style.transform = `rotate(${minRotation}deg)`;
       secHand.style.transform = `rotate(${secRotation}deg)`;
-
-      
     }, 1000);
     
-    /*
-    console.log(`${hourRotation} ${minRotation} ${secRotation}`);
-    document.getElementById("myDIV").style.transform = "rotate(7deg)"; 
-    */
-
-
   </script>
 </body>
 </html>
